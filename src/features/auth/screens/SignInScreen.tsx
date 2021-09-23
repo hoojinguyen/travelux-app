@@ -20,3 +20,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+// pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+// pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+// pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'

@@ -12,9 +12,6 @@ target 'MyAppSeftConfig' do
     :hermes_enabled => false
   )
   
-
-
-
   target 'MyAppSeftConfigTests' do
     inherit! :complete
     # Pods for testing
