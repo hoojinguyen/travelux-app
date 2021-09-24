@@ -14,6 +14,7 @@
 		6172F2D35A4C3AA820D92908 /* libPods-MyAppSeftConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-MyAppSeftConfig.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-MyAppSeftConfig-MyAppSeftConfigTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-MyAppSeftConfig-MyAppSeftConfigTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EDA88EC426FC581A00D76B46 /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA88EC326FC581A00D76B46 /* libswiftWebKit.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-MyAppSeftConfig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppSeftConfig.debug.xcconfig"; path = "Target Support Files/Pods-MyAppSeftConfig/Pods-MyAppSeftConfig.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-MyAppSeftConfig.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppSeftConfig.release.xcconfig"; path = "Target Support Files/Pods-MyAppSeftConfig/Pods-MyAppSeftConfig.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EDA88EC326FC581A00D76B46 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA88EC426FC581A00D76B46 /* libswiftWebKit.tbd in Frameworks */,
 				6172F2D35A4C3AA820D92908 /* libPods-MyAppSeftConfig.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +102,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDA88EC326FC581A00D76B46 /* libswiftWebKit.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				6423831EA8574132BED9D8CC /* libPods-MyAppSeftConfig.a */,
 				ABFE59519B596E51CEFDCCC0 /* libPods-MyAppSeftConfig-MyAppSeftConfigTests.a */,
@@ -145,7 +149,6 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-MyAppSeftConfig-MyAppSeftConfigTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-MyAppSeftConfig-MyAppSeftConfigTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -491,6 +494,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -515,6 +522,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

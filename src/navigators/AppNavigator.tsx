@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { navigationRef } from './RootNavigation';
 
-import { AuthStackScreen } from './StoneNavigator';
-import { IntroStackScreen } from './StoneNavigator';
+import {
+  // IntroStackScreen,
+  // AuthStackScreen,
+  // DrawerNavigator,
+  TabScreen,
+} from './StoneNavigator';
 
 export const AppNavigator = () => {
-  const [isLogged, setIsLogged] = useState<boolean>(false);
+  // const [isLogged, setIsLogged] = useState<boolean>(false);
 
   return (
-    <SafeAreaProvider>
-      <NavigationContainer ref={navigationRef}>
-        {isLogged && <IntroStackScreen />}
-        {!isLogged && <AuthStackScreen />}
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <NavigationContainer ref={navigationRef}>
+      <TabScreen />
+      {/* <DrawerNavigator /> */}
+      {/* {isLogged && <IntroStackScreen />} */}
+      {/* {!isLogged && <AuthStackScreen />} */}
+    </NavigationContainer>
   );
 };

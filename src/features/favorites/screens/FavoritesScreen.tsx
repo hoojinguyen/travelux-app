@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import FocusAwareStatusBar from '../../../components/FocusAwareStatusBar';
 import BackgroundGradient from '../../../components/BackgroundGradient';
 
-export function HomeScreen() {
+export function FavoritesScreen() {
   return (
     <BackgroundGradient>
       <FocusAwareStatusBar barStyle="light-content" />

@@ -3,19 +3,21 @@ import { Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import FocusAwareStatusBar from '../../../components/FocusAwareStatusBar';
 import BackgroundGradient from '../../../components/BackgroundGradient';
-
-export function HomeScreen() {
+import { SafeAreaView } from 'react-native-safe-area-context';
+export function SearchScreen() {
   return (
     <BackgroundGradient>
-      <FocusAwareStatusBar barStyle="light-content" />
+      <SafeAreaView>
+        <FocusAwareStatusBar barStyle="light-content" />
 
-      <ScrollView style={styles.scrollView}>
-        {[...Array(200)].map((x, i) => (
-          <Text key={i} style={styles.text}>
-            Tab1 Screen -- {i}
-          </Text>
-        ))}
-      </ScrollView>
+        <ScrollView style={styles.scrollView}>
+          {[...Array(200)].map((x, i) => (
+            <Text key={i} style={styles.text}>
+              Tab1 Screen -- {i}
+            </Text>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
     </BackgroundGradient>
   );
 }
