@@ -8,7 +8,12 @@ import FlashMessage from 'react-native-flash-message';
 import { AppNavigator } from './src/navigators';
 import { lightTheme, darkTheme } from './src/theme';
 
+import { setupStore } from './src/redux/store';
+import { Provider } from 'react-redux';
+
 export default function App() {
+  const store = setupStore();
+
   const colorSchemeDefault: ColorSchemeName = useColorScheme();
   const [theme, setTheme] = useState<ColorSchemeName>(colorSchemeDefault);
 
@@ -28,14 +33,16 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <ThemeProvider
-        useDark={theme === 'dark'}
-        theme={theme === 'dark' ? darkTheme : lightTheme}>
-        <>
-          <AppNavigator />
-          <FlashMessage position="top" />
-        </>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider
+          useDark={theme === 'dark'}
+          theme={theme === 'dark' ? darkTheme : lightTheme}>
+          <>
+            <AppNavigator />
+            <FlashMessage position="top" />
+          </>
+        </ThemeProvider>
+      </Provider>
     </SafeAreaProvider>
   );
 }
