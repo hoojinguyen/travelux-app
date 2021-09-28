@@ -5,16 +5,20 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import BackgroundGradient from '../../../components/BackgroundGradient';
 import FocusAwareStatusBar from '../../../components/FocusAwareStatusBar';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
+import { login, logout } from '../../../redux/slices/authSlice';
 import {
   decrement,
   increment,
   incrementSaga,
-  incrementSaga10,
 } from '../../../redux/slices/counterSlice';
 
 export function HomeScreen() {
   const count = useAppSelector(state => state.counter.value);
   const loading = useAppSelector(state => state.counter.status);
+  const isLoadingAuth = useAppSelector(state => state.auth.isLoading);
+  const isLogged = useAppSelector(state => state.auth.isLogged);
+  const accessToken = useAppSelector(state => state.auth.accessToken);
+  const refreshToken = useAppSelector(state => state.auth.refreshToken);
   const dispatch = useAppDispatch();
 
   return (
@@ -23,8 +27,21 @@ export function HomeScreen() {
         <FocusAwareStatusBar barStyle="light-content" />
         <View style={styles.container}>
           <Text h1 style={styles.title}>
+            {isLogged ? 'Da Logged' : 'Chua logged'}
+          </Text>
+
+          <Text h1 style={styles.title}>
+            {accessToken}
+          </Text>
+
+          <Text h1 style={styles.title}>
+            {refreshToken}
+          </Text>
+
+          <Text h1 style={styles.title}>
             Count: {count}
           </Text>
+
           <View style={styles.buttonGroup}>
             <Button
               style={styles.buttonItem}
@@ -42,11 +59,20 @@ export function HomeScreen() {
               loading={loading}
               onPress={() => dispatch(incrementSaga())}
             />
+
             <Button
               style={styles.buttonItem}
-              title="Increment with saga 10"
-              loading={loading}
-              onPress={() => dispatch(incrementSaga10())}
+              title="Login"
+              loading={isLoadingAuth}
+              onPress={() =>
+                dispatch(login({ email: 'hoi@gmail.com', password: '123' }))
+              }
+            />
+            <Button
+              style={styles.buttonItem}
+              title="Logout"
+              loading={isLoadingAuth}
+              onPress={() => dispatch(logout())}
             />
           </View>
         </View>
