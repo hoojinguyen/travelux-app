@@ -1,5 +1,8 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { delay, put, select, takeLatest } from 'redux-saga/effects';
+import { showMessage } from 'react-native-flash-message';
+import { put, select, takeLatest } from 'redux-saga/effects';
+import { LoginPayload, Token } from '../../models/authType';
+import authApi from '../../services/api/authApi';
 import {
   authError,
   login,
@@ -7,13 +10,17 @@ import {
   logout,
   logoutSuccess,
 } from '../slices';
-import { LoginPayload } from '../types/authType';
 
 export function* handleLogin(action: PayloadAction<LoginPayload>) {
   try {
-    yield delay(2000);
-    yield put(loginSuccess({ accessToken: '123', refreshToken: '456' }));
+    const result: Token = yield authApi.login(action.payload);
+    yield put(loginSuccess(result));
   } catch (error: any) {
+    yield showMessage({
+      message: 'Error',
+      description: error?.message,
+      type: 'danger',
+    });
     yield put(authError(error?.message));
   }
 }
@@ -22,9 +29,15 @@ export function* handleLogout() {
   try {
     const isLogged: boolean = yield select(state => state.auth.isLogged);
     if (isLogged) {
+      yield authApi.logout();
       yield put(logoutSuccess());
     }
   } catch (error: any) {
+    yield showMessage({
+      message: 'Error',
+      description: error?.message,
+      type: 'danger',
+    });
     yield put(authError(error?.message));
   }
 }

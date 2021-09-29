@@ -30,13 +30,6 @@ export const counterSlice = createSlice({
       state.value += 5;
       state.status = false;
     },
-    incrementSaga10: state => {
-      state.status = true;
-    },
-    incrementSaga10Success: state => {
-      state.value += 10;
-      state.status = false;
-    },
   },
 });
 
@@ -46,8 +39,6 @@ export const {
   incrementByAmount,
   incrementSaga,
   incrementSagaSuccess,
-  incrementSaga10,
-  incrementSaga10Success,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

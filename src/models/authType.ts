@@ -13,11 +13,12 @@ export interface LoginPayload {
   email: string;
   password: string;
 }
+
 export interface AuthState {
   isLoading: boolean;
   isLogged: boolean;
-  accessToken: string;
-  refreshToken?: string;
+  accessToken: string | undefined;
+  refreshToken?: string | undefined;
   currentUser?: User;
   errorMessage?: string;
 }

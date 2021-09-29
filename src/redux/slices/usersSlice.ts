@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import usersApi from '../../services/usersApi';
+import usersApi from '../../services/api/usersApi';
 
 interface User {
   id: string;

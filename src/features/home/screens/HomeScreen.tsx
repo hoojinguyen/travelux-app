@@ -1,4 +1,5 @@
-import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button, Text } from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -21,6 +22,10 @@ export function HomeScreen() {
   const refreshToken = useAppSelector(state => state.auth.refreshToken);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    console.log('init');
+  }, []);
+
   return (
     <BackgroundGradient>
       <SafeAreaView>
@@ -30,13 +35,19 @@ export function HomeScreen() {
             {isLogged ? 'Da Logged' : 'Chua logged'}
           </Text>
 
-          <Text h1 style={styles.title}>
-            {accessToken}
-          </Text>
+          <>
+            {isLogged ? (
+              <>
+                <Text h1 style={styles.title}>
+                  accessToken: {accessToken}
+                </Text>
 
-          <Text h1 style={styles.title}>
-            {refreshToken}
-          </Text>
+                <Text h1 style={styles.title}>
+                  refreshToken: {refreshToken}
+                </Text>
+              </>
+            ) : null}
+          </>
 
           <Text h1 style={styles.title}>
             Count: {count}
@@ -65,13 +76,12 @@ export function HomeScreen() {
               title="Login"
               loading={isLoadingAuth}
               onPress={() =>
-                dispatch(login({ email: 'hoi@gmail.com', password: '123' }))
+                dispatch(login({ email: 'hoi@gmail.com', password: '123456' }))
               }
             />
             <Button
               style={styles.buttonItem}
               title="Logout"
-              loading={isLoadingAuth}
               onPress={() => dispatch(logout())}
             />
           </View>
