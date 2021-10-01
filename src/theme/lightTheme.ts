@@ -1,7 +1,10 @@
 import { lightColors } from './colors';
-import { typography } from './typography';
+import { DefaultTheme } from 'react-native-paper';
 
 export const lightTheme = {
-  ...typography,
-  colors: { ...lightColors },
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    ...lightColors,
+  },
 };

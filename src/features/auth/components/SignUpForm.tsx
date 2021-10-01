@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import {
@@ -16,28 +15,27 @@ import { Colors } from 'react-native-paper';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Rules from '../../../constants/rules';
-import { SignInFormValues } from '../../../models/formType';
+import { SignUpFormValues } from '../../../models/formType';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
-import { signIn } from '../../../redux/slices/authSlice';
+import { signUp } from '../../../redux/slices/authSlice';
 import { FormStyle as styles } from '../styles';
 
-export default function SignInForm() {
-  const navigation = useNavigation<any>();
-
+export default function SignUpForm({ navigation }: any) {
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector(state => state.auth.isLoading);
 
   const [secureTextEntry, setSecureTextEntry] = useState<boolean>(true);
+
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignInFormValues>({
-    defaultValues: { email: '', password: '' },
+  } = useForm<SignUpFormValues>({
+    defaultValues: { email: '', password: '', displayName: '' },
   });
 
-  const handleSignIn: SubmitHandler<SignInFormValues> = data => {
-    dispatch(signIn(data));
+  const handleSignUp: SubmitHandler<SignUpFormValues> = data => {
+    dispatch(signUp(data));
   };
 
   return (
@@ -50,7 +48,7 @@ export default function SignInForm() {
             <FontAwesome name="user-o" color={Colors.blueGrey600} size={20} />
             <Controller
               control={control}
-              rules={{ ...Rules.SignInForm['email'] }}
+              rules={{ ...Rules.SignUpForm['email'] }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
                   value={value}
@@ -83,7 +81,7 @@ export default function SignInForm() {
             <Feather name="lock" color={Colors.blueGrey600} size={20} />
             <Controller
               control={control}
-              rules={{ ...Rules.SignInForm['password'] }}
+              rules={{ ...Rules.SignUpForm['password'] }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
                   value={value}
@@ -112,11 +110,39 @@ export default function SignInForm() {
           )}
         </View>
         <View style={styles.formItem}>
-          <Pressable onPress={handleSubmit(handleSignIn)}>
+          <Text style={styles.labelInput}>Display name</Text>
+          <View style={styles.formInput}>
+            <FontAwesome
+              name="address-book"
+              color={Colors.blueGrey600}
+              size={20}
+            />
+            <Controller
+              control={control}
+              rules={{ ...Rules.SignUpForm['displayName'] }}
+              render={({ field: { onChange, onBlur, value } }) => (
+                <TextInput
+                  value={value}
+                  onChangeText={value => onChange(value)}
+                  onBlur={onBlur}
+                  autoCapitalize="none"
+                  placeholder="Your name"
+                  style={styles.textInput}></TextInput>
+              )}
+              name="displayName"
+              defaultValue=""
+            />
+          </View>
+          {errors.email && (
+            <Text style={styles.errorMsg}>{errors.email.message}</Text>
+          )}
+        </View>
+        <View style={styles.formItem}>
+          <Pressable onPress={handleSubmit(handleSignUp)}>
             <LinearGradient
               colors={[Colors.lightBlue600, Colors.lightBlue800]}
               style={styles.btnSignIn}>
-              <Text style={styles.textSign}>Sign In</Text>
+              <Text style={styles.textSign}>Sign Up</Text>
               {isLoading && (
                 <ActivityIndicator
                   size={60}
@@ -127,9 +153,9 @@ export default function SignInForm() {
             </LinearGradient>
           </Pressable>
           <Pressable
-            onPress={() => navigation.navigate('SignUpScreen')}
+            onPress={() => navigation.goBack()}
             style={[styles.btnSignIn, styles.btnSignUp]}>
-            <Text style={[styles.textSign, styles.textSignUp]}>Sign Up</Text>
+            <Text style={[styles.textSign, styles.textSignUp]}>Sign In</Text>
           </Pressable>
         </View>
       </View>

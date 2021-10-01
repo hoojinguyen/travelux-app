@@ -1,33 +1,18 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import SignInForm from '../components/SignInForm';
+import { AuthStyle as styles } from '../styles';
 
-import { Header, Footer, SignInForm } from '../components';
-import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-export const SignInScreen = ({ route, navigation }: any) => {
+export const SignInScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Header title="Login" />
-      <SignInForm />
-      <Button
-        title="Go forget"
-        icon={<Icon name="arrow-right" size={15} color="white" />}
-        onPress={() => navigation.navigate('ForgetPasswordScreen')}
-      />
-      <Button
-        title="Go SignUp"
-        onPress={() => navigation.navigate('SignUpScreen')}
-      />
-      <Footer />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Animatable.View animation="slideInDown" style={styles.header}>
+        <Text style={styles.textHeader}>Welcome to my world</Text>
+      </Animatable.View>
+      <Animatable.View animation="fadeInUpBig" style={styles.body}>
+        <SignInForm />
+      </Animatable.View>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-});

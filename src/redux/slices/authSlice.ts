@@ -1,45 +1,60 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AuthState, LoginPayload, Token } from '../../models/authType';
+import {
+  AuthState,
+  SignInPayload,
+  SignUpPayload,
+  Token,
+} from '../../models/authType';
 
 const initialState: AuthState = {
   isLoading: false,
   isLogged: false,
   accessToken: '',
   refreshToken: '',
-  errorMessage: undefined,
 };
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<LoginPayload>) => {
+    signIn: (state, action: PayloadAction<SignInPayload>) => {
       state.isLoading = true;
     },
-    loginSuccess: (state, action: PayloadAction<Token>) => {
+    signInSuccess: (state, action: PayloadAction<Token>) => {
       state.isLoading = false;
       state.isLogged = true;
       state.accessToken = action.payload?.accessToken;
       state.refreshToken = action.payload?.refreshToken;
     },
-    logout: state => {
+    signOut: state => {
       state.isLoading = true;
     },
-    logoutSuccess: state => {
+    signOutSuccess: state => {
       state.isLoading = false;
       state.isLogged = false;
       state.accessToken = '';
       state.refreshToken = '';
-      state.errorMessage = undefined;
+    },
+    signUp: (state, action: PayloadAction<SignUpPayload>) => {
+      state.isLoading = true;
+    },
+    signUpSuccess: state => {
+      state.isLoading = false;
     },
     authError: (state, action: PayloadAction<string>) => {
       state.isLoading = false;
-      state.errorMessage = action.payload;
     },
   },
 });
 
-export const { login, loginSuccess, logout, logoutSuccess, authError } =
-  authSlice.actions;
+export const {
+  signIn,
+  signInSuccess,
+  signOut,
+  signOutSuccess,
+  signUp,
+  signUpSuccess,
+  authError,
+} = authSlice.actions;
 
 export default authSlice.reducer;

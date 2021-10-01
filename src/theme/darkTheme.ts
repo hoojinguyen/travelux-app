@@ -1,7 +1,10 @@
 import { darkColors } from './colors';
-import { typography } from './typography';
+import { DefaultTheme } from 'react-native-paper';
 
 export const darkTheme = {
-  ...typography,
-  colors: { ...darkColors },
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    ...darkColors,
+  },
 };

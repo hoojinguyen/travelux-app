@@ -4,14 +4,20 @@ export interface Token {
 }
 
 export interface User {
-  id?: string;
+  id?: string | number;
   name?: string;
   email?: string;
 }
 
-export interface LoginPayload {
+export interface SignInPayload {
   email: string;
   password: string;
+}
+
+export interface SignUpPayload {
+  email: string;
+  password: string;
+  displayName: string;
 }
 
 export interface AuthState {
@@ -20,5 +26,4 @@ export interface AuthState {
   accessToken: string | undefined;
   refreshToken?: string | undefined;
   currentUser?: User;
-  errorMessage?: string;
 }

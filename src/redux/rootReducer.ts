@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
 const rootPersistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['counter'],
+  blacklist: ['auth', 'counter'],
 };
 
 export type RootState = ReturnType<typeof rootReducer>;

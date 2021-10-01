@@ -1,17 +1,15 @@
-import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
 import { Appearance, ColorSchemeName, useColorScheme } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ThemeProvider } from 'react-native-elements';
 import FlashMessage from 'react-native-flash-message';
-
-import { AppNavigator } from './src/navigators';
-import { lightTheme, darkTheme } from './src/theme';
-
-import { PersistGate } from 'redux-persist/integration/react';
-import { setupStore } from './src/redux/store';
+import 'react-native-gesture-handler';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
-import GreenIndicator from './src/components/GreenIndicator';
+import { PersistGate } from 'redux-persist/integration/react';
+import FullScreenLoader from './src/components/FullScreenLoader';
+import { AppNavigator } from './src/navigators';
+import { setupStore } from './src/redux/store';
+import { darkTheme, lightTheme } from './src/theme';
 
 export default function App() {
   const { store, persistor } = setupStore();
@@ -36,15 +34,11 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <Provider store={store}>
-        <PersistGate loading={<GreenIndicator />} persistor={persistor}>
-          <ThemeProvider
-            useDark={theme === 'dark'}
-            theme={theme === 'dark' ? darkTheme : lightTheme}>
-            <>
-              <AppNavigator />
-              <FlashMessage position="top" />
-            </>
-          </ThemeProvider>
+        <PersistGate loading={<FullScreenLoader />} persistor={persistor}>
+          <PaperProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+            <AppNavigator />
+            <FlashMessage position="top" />
+          </PaperProvider>
         </PersistGate>
       </Provider>
     </SafeAreaProvider>
