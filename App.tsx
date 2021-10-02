@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Appearance, ColorSchemeName, useColorScheme } from 'react-native';
+import RNBootSplash from 'react-native-bootsplash';
 import FlashMessage from 'react-native-flash-message';
 import 'react-native-gesture-handler';
 import { Provider as PaperProvider } from 'react-native-paper';
@@ -29,6 +30,17 @@ export default function App() {
     Appearance.addChangeListener(listener);
 
     return () => Appearance.removeChangeListener(listener);
+  }, []);
+
+  useEffect(() => {
+    const init = async () => {
+      // …do multiple sync or async tasks
+      return;
+    };
+
+    init().finally(async () => {
+      await RNBootSplash.hide({ fade: true });
+    });
   }, []);
 
   return (

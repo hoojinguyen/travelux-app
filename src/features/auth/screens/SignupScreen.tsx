@@ -7,12 +7,18 @@ import { AuthStyle as styles } from '../styles';
 export const SignUpScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <Animatable.View animation="fadeIn" style={styles.header}>
+      {/* <Animatable.View animation="fadeIn" style={styles.header}>
         <Text style={styles.textHeader}>Register now!</Text>
       </Animatable.View>
       <Animatable.View animation="slideInRight" style={styles.body}>
         <SignUpForm navigation={navigation} />
-      </Animatable.View>
+      </Animatable.View> */}
+      <View style={styles.header}>
+        <Text style={styles.textHeader}>Register now!</Text>
+      </View>
+      <View style={styles.body}>
+        <SignUpForm navigation={navigation} />
+      </View>
     </View>
   );
 };

@@ -1,9 +1,9 @@
 package com.myappseftconfig;
 
 import com.facebook.react.ReactActivity;
+import com.zoontek.rnbootsplash.RNBootSplash;
 
 import android.os.Bundle;
-
 public class MainActivity extends ReactActivity {
 
   /**
@@ -17,6 +17,8 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(null);
+    // super.onCreate(null);
+    super.onCreate(savedInstanceState); // or super.onCreate(null) with react-native-screens
+    RNBootSplash.init(R.drawable.bootsplash, MainActivity.this); 
   }
 }

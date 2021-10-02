@@ -17,6 +17,8 @@ const AuthStyle = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
     textAlign: 'center',
+    fontFamily: 'SourceSansPro-ExtraLight',
+    letterSpacing: 1,
   },
   body: {
     flex: 3,
@@ -36,6 +38,7 @@ const FormStyle = StyleSheet.create({
   labelInput: {
     color: Colors.blueGrey900,
     fontSize: 18,
+    fontFamily: 'SourceSansPro-ExtraLight',
   },
   formInput: {
     flexDirection: 'row',
@@ -49,6 +52,7 @@ const FormStyle = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
     color: Colors.blueGrey900,
+    fontFamily: 'SourceSansPro-LightItalic',
   },
   btnSignIn: {
     width: '100%',
