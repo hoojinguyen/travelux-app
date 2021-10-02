@@ -1,43 +1,63 @@
-// import axiosClient from '../axiosClient';
+import auth from '@react-native-firebase/auth';
 import {
-  SignInPayload,
-  SignUpPayload,
-  Token,
-  User,
+  SignInRequest,
+  SignInResponse,
+  SignUpRequest,
+  SignUpResponse,
 } from '../../models/authType';
 
-const sleep = (ms: number) => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-};
-
-const signIn = async ({ email, password }: SignInPayload): Promise<Token> => {
-  const emailDefault = 'vanhoinguyen98@gmail.com';
-  const passwordDefault = 'nguyenvanhoi98';
-  await sleep(2000);
-  if (email == emailDefault && password == passwordDefault) {
-    return { accessToken: 'oi0323', refreshToken: 'sda02323' };
+const signIn = async (payload: SignInRequest): Promise<SignInResponse> => {
+  try {
+    const result = await auth().signInWithEmailAndPassword(
+      payload.email,
+      payload.password,
+    );
+    const accessToken = await result.user.getIdToken();
+    return {
+      accessToken,
+      currentUser: {
+        email: result.user.email,
+        displayName: result.user.displayName,
+      },
+    };
+  } catch (error: any) {
+    const message = error.message || 'Email or password incorrect';
+    throw new Error(message);
   }
-  throw new Error('email or password incorrect');
 };
 
-const signUp = async (payload: SignUpPayload): Promise<User> => {
-  console.log('🚀 ~ payload - sign up: ', payload);
-  await sleep(2000);
-  return {
-    id: 1,
-    name: 'Hoi',
-    email: 'vanhoi@gmail.com',
-  };
+const signUp = async (payload: SignUpRequest): Promise<SignUpResponse> => {
+  try {
+    const result = await auth().createUserWithEmailAndPassword(
+      payload.email,
+      payload.password,
+    );
+    await result.user.updateProfile({
+      displayName: payload.displayName,
+      photoURL: null,
+    });
+
+    const accessToken = await result.user.getIdToken();
+
+    return {
+      accessToken,
+      currentUser: {
+        email: payload.email,
+        displayName: payload.displayName,
+      },
+    };
+  } catch (error: any) {
+    const message = error.message || 'Email or password incorrect';
+    throw new Error(message);
+  }
 };
 
-const signOut = async () => {
-  await sleep(2000);
-  return;
+const signOut = async (): Promise<any> => {
+  return await auth().signOut();
 };
 
-const refreshToken = () => {
-  console.log('refreshToken api');
-  return;
+const resetPassword = async (email: string): Promise<any> => {
+  return await auth().sendPasswordResetEmail(email);
 };
 
-export default { signIn, signOut, signUp, refreshToken };
+export default { signIn, signOut, signUp, resetPassword };

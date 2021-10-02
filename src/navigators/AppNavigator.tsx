@@ -1,15 +1,20 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { useAppSelector } from '../redux/hook';
+import FullScreenLoader from '../components/FullScreenLoader';
+import useNavigator from '../hooks/useNavigator';
 import { navigationRef } from './RootNavigation';
 import { AuthStackScreen, TabScreen } from './StoneNavigator';
 
 export const AppNavigator = () => {
-  const isLogged = useAppSelector(state => state.auth.isLogged);
+  const { isLoading, isAuthenticated } = useNavigator();
+
+  if (isLoading) {
+    return <FullScreenLoader />;
+  }
 
   return (
     <NavigationContainer ref={navigationRef}>
-      {isLogged ? <TabScreen /> : <AuthStackScreen />}
+      {isAuthenticated ? <TabScreen /> : <AuthStackScreen />}
       {/* <DrawerNavigator /> */}
       {/* {isLogged && <IntroStackScreen />} */}
     </NavigationContainer>

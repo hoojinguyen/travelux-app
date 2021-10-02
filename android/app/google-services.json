@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "909820349328",
+    "firebase_url": "https://rn-ts-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "rn-ts-app",
+    "storage_bucket": "rn-ts-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909820349328:android:0b3d6503f616f0e8afc115",
+        "android_client_info": {
+          "package_name": "com.myappseftconfig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909820349328-elbi7g6laa9oujme9vc532ukd8qg0oan.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ4YgSeUTPnx4leMnTujzmRlKKq0mGhN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909820349328-elbi7g6laa9oujme9vc532ukd8qg0oan.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "909820349328-s46kp32j331vm9udapjd4k0euk92qj9l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.MyAppSeftConfig",
+                "app_store_id": "10011998"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

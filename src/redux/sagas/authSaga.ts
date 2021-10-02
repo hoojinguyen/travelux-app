@@ -1,7 +1,12 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { showMessage } from 'react-native-flash-message';
-import { put, select, takeLatest } from 'redux-saga/effects';
-import { SignInPayload, Token } from '../../models/authType';
+import { put, takeLatest } from 'redux-saga/effects';
+import {
+  SignInRequest,
+  SignInResponse,
+  SignUpRequest,
+  SignUpResponse,
+} from '../../models/authType';
 import authApi from '../../services/api/authApi';
 import {
   authError,
@@ -12,60 +17,40 @@ import {
   signUp,
   signUpSuccess,
 } from '../slices';
-import { SignUpPayload, User } from './../../models/authType';
 
-export function* handleSignIn(action: PayloadAction<SignInPayload>) {
+export function* handleSignIn({ payload }: PayloadAction<SignInRequest>) {
   try {
-    const result: Token = yield authApi.signIn(action.payload);
+    const result: SignInResponse = yield authApi.signIn(payload);
     yield put(signInSuccess(result));
   } catch (error: any) {
     yield showMessage({
       message: 'Error',
       description: error?.message,
       type: 'danger',
+      duration: 4000,
     });
-    yield put(authError(error?.message));
+    yield put(authError());
   }
 }
 
-export function* handleSignUp(action: PayloadAction<SignUpPayload>) {
+export function* handleSignUp({ payload }: PayloadAction<SignUpRequest>) {
   try {
-    const result: User = yield authApi.signUp(action.payload);
-    yield put(signUpSuccess());
-    if (result) {
-      yield handleSignIn({
-        type: signIn.type,
-        payload: {
-          email: action.payload.email,
-          password: action.payload.password,
-        },
-      });
-    }
+    const result: SignUpResponse = yield authApi.signUp(payload);
+    yield put(signUpSuccess(result));
   } catch (error: any) {
     yield showMessage({
       message: 'Error',
       description: error?.message,
       type: 'danger',
+      duration: 4000,
     });
-    yield put(authError(error?.message));
+    yield put(authError());
   }
 }
 
 export function* handleSignOut() {
-  try {
-    const isLogged: boolean = yield select(state => state.auth.isLogged);
-    if (isLogged) {
-      yield authApi.signOut();
-      yield put(signOutSuccess());
-    }
-  } catch (error: any) {
-    yield showMessage({
-      message: 'Error',
-      description: error?.message,
-      type: 'danger',
-    });
-    yield put(authError(error?.message));
-  }
+  yield authApi.signOut();
+  yield put(signOutSuccess());
 }
 
 export default [

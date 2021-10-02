@@ -6,11 +6,6 @@ import FocusAwareStatusBar from '../../../components/FocusAwareStatusBar';
 import { useAppDispatch } from '../../../redux/hook';
 import { fetchUsers } from '../../../redux/slices/usersSlice';
 
-// import users2 from '../../../services/users.json';
-
-const ImageSrc =
-  'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg';
-
 export function SearchScreen() {
   const dispatch = useAppDispatch();
 

@@ -33,14 +33,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const init = async () => {
-      // …do multiple sync or async tasks
-      return;
-    };
-
-    init().finally(async () => {
-      await RNBootSplash.hide({ fade: true });
-    });
+    RNBootSplash.hide({ fade: true });
   }, []);
 
   return (

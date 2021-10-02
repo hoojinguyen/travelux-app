@@ -1,20 +1,15 @@
-export interface Token {
-  accessToken: string;
-  refreshToken: string;
-}
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
-export interface User {
-  id?: string | number;
-  name?: string;
-  email?: string;
-}
+export interface UserFirebaseAuth extends FirebaseAuthTypes.User {}
+export interface UserCredentialFirebaseAuth
+  extends FirebaseAuthTypes.UserCredential {}
 
-export interface SignInPayload {
+export interface SignInRequest {
   email: string;
   password: string;
 }
 
-export interface SignUpPayload {
+export interface SignUpRequest {
   email: string;
   password: string;
   displayName: string;
@@ -23,7 +18,19 @@ export interface SignUpPayload {
 export interface AuthState {
   isLoading: boolean;
   isLogged: boolean;
-  accessToken: string | undefined;
-  refreshToken?: string | undefined;
-  currentUser?: User;
+  currentUser?: User | null;
+  accessToken?: string;
+  refreshToken?: string;
 }
+export interface User {
+  email?: string | null;
+  displayName?: string | null;
+}
+
+export interface SignInResponse {
+  refreshToken?: string;
+  accessToken: string;
+  currentUser: User | null;
+}
+
+export interface SignUpResponse extends SignInResponse {}

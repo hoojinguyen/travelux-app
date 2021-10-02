@@ -1,42 +1,30 @@
+import auth from '@react-native-firebase/auth';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useAppSelector, useAppDispatch } from '../redux/hook';
-
-// import { pushNotification } from '@lib/push-notification';
-// import { authSelectors } from '@store/auth';
-// import { generalSelector } from '@store/general';
-// import { notificationActions } from '@store/notification';
+import { UserFirebaseAuth as User } from '../models/authType';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
+import { setAuthenticated } from '../redux/slices/authSlice';
 
 const useNavigator = () => {
+  const dispatch = useAppDispatch();
   const isLogged = useAppSelector(state => state.auth.isLogged);
+  const currentUser = useAppSelector(state => state.auth.currentUser);
 
-  //   const isAnonymously = useAppSelector(authSelectors.isAnonymously);
-  //   const { rehydrated } = useSelector(generalSelector.getPersistState);
+  const [initializing, setInitializing] = useState(true);
 
-  //   const [isRehydrated, setIsRehydrated] = useState(rehydrated);
-  //   const [channedCreated, setChannelCreated] = useState(false);
-  //   const dispatch = useAppDispatch();
+  const onAuthStateChanged = async (user: User | null) => {
+    dispatch(setAuthenticated(!!user));
+    if (initializing) setInitializing(false);
+  };
 
-  //   useEffect(() => {
-  //     pushNotification.createChannel(setChannelCreated);
-  //     pushNotification.getAllScheduledLocalNotifications(notifications => {
-  //       dispatch(
-  //         notificationActions.syncScheduleLocalNotificationAsync(notifications),
-  //       );
-  //     });
-  //   }, []);
-
-  //   useEffect(() => {
-  //     if (rehydrated) {
-  //       setIsRehydrated(true);
-  //     }
-  //   }, [isLogged, rehydrated]);
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return () => subscriber();
+  }, []);
 
   return {
+    isLoading: initializing,
     isAuthenticated: isLogged,
-    // isRehydrated,
-    // channedCreated,
-    // setChannelCreated,
+    currentUser,
   };
 };
 

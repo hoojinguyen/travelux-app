@@ -85,4 +85,32 @@ const FormStyle = StyleSheet.create({
   },
 });
 
-export { AuthStyle, FormStyle };
+const SocialStyle = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+  btnSocial: {
+    width: 100,
+    height: 50,
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: Colors.blueGrey300,
+    borderRadius: 10,
+    borderWidth: 1,
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 1 },
+  },
+  btnFacebook: {
+    shadowColor: Colors.blue800,
+  },
+  btnGoogle: {
+    shadowColor: Colors.red800,
+  },
+});
+
+export { AuthStyle, FormStyle, SocialStyle };

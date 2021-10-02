@@ -1,14 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   AuthState,
-  SignInPayload,
-  SignUpPayload,
-  Token,
+  SignInRequest,
+  SignInResponse,
+  SignUpRequest,
+  SignUpResponse,
 } from '../../models/authType';
 
 const initialState: AuthState = {
   isLoading: false,
   isLogged: false,
+  currentUser: null,
   accessToken: '',
   refreshToken: '',
 };
@@ -17,14 +19,23 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    signIn: (state, action: PayloadAction<SignInPayload>) => {
+    signIn: (state, action: PayloadAction<SignInRequest>) => {
       state.isLoading = true;
     },
-    signInSuccess: (state, action: PayloadAction<Token>) => {
+    signInSuccess: (state, action: PayloadAction<SignInResponse>) => {
       state.isLoading = false;
       state.isLogged = true;
-      state.accessToken = action.payload?.accessToken;
-      state.refreshToken = action.payload?.refreshToken;
+      state.currentUser = action.payload.currentUser;
+      state.accessToken = action.payload.accessToken;
+    },
+    signUp: (state, action: PayloadAction<SignUpRequest>) => {
+      state.isLoading = true;
+    },
+    signUpSuccess: (state, action: PayloadAction<SignUpResponse>) => {
+      state.isLoading = false;
+      state.isLogged = true;
+      state.currentUser = action.payload.currentUser;
+      state.accessToken = action.payload.accessToken;
     },
     signOut: state => {
       state.isLoading = true;
@@ -32,17 +43,15 @@ export const authSlice = createSlice({
     signOutSuccess: state => {
       state.isLoading = false;
       state.isLogged = false;
+      state.currentUser = null;
       state.accessToken = '';
-      state.refreshToken = '';
     },
-    signUp: (state, action: PayloadAction<SignUpPayload>) => {
-      state.isLoading = true;
-    },
-    signUpSuccess: state => {
+    authError: state => {
       state.isLoading = false;
     },
-    authError: (state, action: PayloadAction<string>) => {
-      state.isLoading = false;
+    setAuthenticated: (state, action: PayloadAction<boolean>) => {
+      state.isLogged = !!action.payload;
+      // state.currentUser = action.payload;
     },
   },
 });
@@ -55,6 +64,7 @@ export const {
   signUp,
   signUpSuccess,
   authError,
+  setAuthenticated,
 } = authSlice.actions;
 
 export default authSlice.reducer;
