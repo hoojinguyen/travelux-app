@@ -45,7 +45,7 @@ export default function SignUpForm({ navigation }: any) {
         <View style={styles.formItem}>
           <Text style={styles.labelInput}>Email</Text>
           <View style={styles.formInput}>
-            <FontAwesome name="user-o" color={Colors.blueGrey600} size={20} />
+            <FontAwesome name="user-o" color={Colors.lightGreen900} size={20} />
             <Controller
               control={control}
               rules={{ ...Rules.SignUpForm['email'] }}
@@ -56,6 +56,7 @@ export default function SignUpForm({ navigation }: any) {
                   onBlur={onBlur}
                   autoCapitalize="none"
                   placeholder="Your email"
+                  placeholderTextColor={Colors.lightGreen500}
                   style={styles.textInput}></TextInput>
               )}
               name="email"
@@ -78,7 +79,7 @@ export default function SignUpForm({ navigation }: any) {
         <View style={styles.formItem}>
           <Text style={styles.labelInput}>Password</Text>
           <View style={styles.formInput}>
-            <Feather name="lock" color={Colors.blueGrey600} size={20} />
+            <Feather name="lock" color={Colors.lightGreen900} size={20} />
             <Controller
               control={control}
               rules={{ ...Rules.SignUpForm['password'] }}
@@ -89,6 +90,7 @@ export default function SignUpForm({ navigation }: any) {
                   autoCapitalize="none"
                   onBlur={onBlur}
                   placeholder="Your password"
+                  placeholderTextColor={Colors.lightGreen500}
                   secureTextEntry={secureTextEntry}
                   style={styles.textInput}
                 />
@@ -99,9 +101,13 @@ export default function SignUpForm({ navigation }: any) {
 
             <Pressable onPress={() => setSecureTextEntry(!secureTextEntry)}>
               {secureTextEntry ? (
-                <Feather name="eye-off" color={Colors.blueGrey600} size={20} />
+                <Feather
+                  name="eye-off"
+                  color={Colors.lightGreen900}
+                  size={20}
+                />
               ) : (
-                <Feather name="eye" color={Colors.blueGrey600} size={20} />
+                <Feather name="eye" color={Colors.lightGreen900} size={20} />
               )}
             </Pressable>
           </View>
@@ -114,7 +120,7 @@ export default function SignUpForm({ navigation }: any) {
           <View style={styles.formInput}>
             <FontAwesome
               name="address-book"
-              color={Colors.blueGrey600}
+              color={Colors.lightGreen900}
               size={20}
             />
             <Controller
@@ -127,6 +133,7 @@ export default function SignUpForm({ navigation }: any) {
                   onBlur={onBlur}
                   autoCapitalize="none"
                   placeholder="Your name"
+                  placeholderTextColor={Colors.lightGreen500}
                   style={styles.textInput}></TextInput>
               )}
               name="displayName"
@@ -140,7 +147,7 @@ export default function SignUpForm({ navigation }: any) {
         <View style={styles.formItem}>
           <Pressable onPress={handleSubmit(handleSignUp)}>
             <LinearGradient
-              colors={[Colors.lightBlue600, Colors.lightBlue800]}
+              colors={[Colors.lightGreen600, Colors.lightGreen900]}
               style={styles.btnSignIn}>
               <Text style={styles.textSign}>Sign Up</Text>
               {isLoading && (

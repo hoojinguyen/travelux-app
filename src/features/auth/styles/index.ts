@@ -4,19 +4,30 @@ import { Colors } from 'react-native-paper';
 const AuthStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.lightBlue700,
+    backgroundColor: Colors.lightGreen800,
   },
   header: {
     flex: 1,
     justifyContent: 'flex-end',
     paddingHorizontal: 20,
-    paddingBottom: 50,
+    paddingTop: 40,
+    paddingBottom: 20,
+  },
+  logoHeader: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoImage: {
+    width: 100,
+    height: 100,
   },
   textHeader: {
+    flex: 1,
+    textAlign: 'center',
     color: Colors.white,
     fontWeight: 'bold',
     fontSize: 30,
-    textAlign: 'center',
     fontFamily: 'SourceSansPro-ExtraLight',
     letterSpacing: 1,
   },
@@ -36,22 +47,23 @@ const FormStyle = StyleSheet.create({
     marginBottom: 20,
   },
   labelInput: {
-    color: Colors.blueGrey900,
-    fontSize: 18,
+    color: Colors.lightGreen700,
+    fontWeight: 'bold',
+    fontSize: 16,
     fontFamily: 'SourceSansPro-ExtraLight',
   },
   formInput: {
     flexDirection: 'row',
     marginTop: 10,
     borderBottomWidth: 1,
-    borderBottomColor: Colors.blueGrey600,
+    borderBottomColor: Colors.lightGreen600,
     paddingBottom: 5,
   },
   textInput: {
     flex: 1,
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
-    color: Colors.blueGrey900,
+    color: Colors.lightGreen900,
     fontFamily: 'SourceSansPro-LightItalic',
   },
   btnSignIn: {
@@ -63,7 +75,7 @@ const FormStyle = StyleSheet.create({
     marginBottom: 15,
   },
   btnSignUp: {
-    borderColor: Colors.lightBlue800,
+    borderColor: Colors.lightGreen900,
     borderWidth: 1,
   },
   textSign: {
@@ -72,7 +84,7 @@ const FormStyle = StyleSheet.create({
     color: Colors.white,
   },
   textSignUp: {
-    color: Colors.lightBlue800,
+    color: Colors.lightGreen900,
   },
   loading: {
     position: 'absolute',
@@ -99,7 +111,7 @@ const SocialStyle = StyleSheet.create({
     marginRight: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: Colors.blueGrey300,
+    borderColor: Colors.grey500,
     borderRadius: 10,
     borderWidth: 1,
     shadowOpacity: 0.3,
