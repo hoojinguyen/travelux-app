@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:909820349328:android:0b3d6503f616f0e8afc115",
         "android_client_info": {
-          "package_name": "com.myappseftconfig"
+          "package_name": "com.Travelux"
         }
       },
       "oauth_client": [
@@ -35,7 +35,7 @@
               "client_id": "909820349328-s46kp32j331vm9udapjd4k0euk92qj9l.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "org.reactjs.native.example.MyAppSeftConfig",
+                "bundle_id": "org.reactjs.native.example.Travelux",
                 "app_store_id": "10011998"
               }
             }
