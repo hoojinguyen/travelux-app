@@ -1,59 +1,29 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import BackgroundGradient from '../../../components/BackgroundGradient';
 import FocusAwareStatusBar from '../../../components/FocusAwareStatusBar';
-import { useAppDispatch, useAppSelector } from '../../../redux/hook';
-import { signOut } from '../../../redux/slices/authSlice';
+import Discount from '../components/Discount';
+import Header from '../components/Header';
+import House from '../components/House';
+import ListPlace from '../components/ListPlace';
+import Promotion from '../components/Promotion';
+import Search from '../components/Search';
+import { HomeStyle as styles } from '../styles';
 
 export function HomeScreen() {
-  const dispatch = useAppDispatch();
-
-  const isLogged = useAppSelector(state => state.auth.isLogged);
-  const accessToken = useAppSelector(state => state.auth.accessToken);
-  const currentUser = useAppSelector(state => state.auth.currentUser);
-
   return (
-    <BackgroundGradient>
-      <SafeAreaView>
-        <FocusAwareStatusBar barStyle="light-content" />
-        <View style={styles.container}>
-          <Text style={styles.title}>
-            {isLogged ? 'Da Logged' : 'Chua logged'}
-          </Text>
-          <View>
-            {isLogged && (
-              <Text style={styles.title}>accessToken: {accessToken}</Text>
-            )}
-          </View>
-          <View>{currentUser && <Text>Email: {currentUser.email}</Text>}</View>
-          <View>
-            {currentUser && <Text>DispalyName: {currentUser.displayName}</Text>}
-          </View>
-
-          <View>
-            <Button title="Logout" onPress={() => dispatch(signOut())} />
-          </View>
-        </View>
-      </SafeAreaView>
-    </BackgroundGradient>
+    <SafeAreaView style={styles.container}>
+      <FocusAwareStatusBar barStyle="dark-content" />
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}>
+        <Header />
+        <Search />
+        <ListPlace />
+        <Discount />
+        <House />
+        <Promotion />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 100,
-  },
-  title: {
-    color: '#fff',
-    textAlign: 'center',
-  },
-  buttonGroup: {
-    marginTop: 40,
-  },
-  buttonItem: {
-    marginBottom: 20,
-  },
-});

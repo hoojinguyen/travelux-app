@@ -1,3 +1,5 @@
+import { Colors } from 'react-native-paper';
+
 interface Colors {
   primary: string;
   secondary: string;
@@ -43,7 +45,7 @@ export const darkColors: Colors = {
 };
 
 export const navigationColors = {
-  activeColor: '#CC0000',
-  inactiveColor: '#f5f5f5',
-  background: '#100c08',
+  activeColor: Colors.white,
+  inactiveColor: Colors.red50,
+  background: Colors.lightGreen900,
 };

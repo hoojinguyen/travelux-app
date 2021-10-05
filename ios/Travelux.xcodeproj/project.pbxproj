@@ -14,6 +14,7 @@
 		6172F2D35A4C3AA820D92908 /* libPods-Travelux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-Travelux.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-Travelux-TraveluxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-Travelux-TraveluxTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		ED5C1EFC270C80C800A0CDC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5C1EFB270C80C800A0CDC4 /* GoogleService-Info.plist */; };
 		ED7E3E4D2708024C00649486 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E372708019F00649486 /* SourceSansPro-Black.ttf */; };
 		ED7E3E4E2708024C00649486 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E352708019F00649486 /* SourceSansPro-BlackItalic.ttf */; };
 		ED7E3E4F2708024C00649486 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E362708019F00649486 /* SourceSansPro-Bold.ttf */; };
@@ -26,7 +27,6 @@
 		ED7E3E562708024C00649486 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E392708019F00649486 /* SourceSansPro-Regular.ttf */; };
 		ED7E3E572708024C00649486 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E3F2708019F00649486 /* SourceSansPro-SemiBold.ttf */; };
 		ED7E3E582708024C00649486 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E3A2708019F00649486 /* SourceSansPro-SemiBoldItalic.ttf */; };
-		ED7E3E77270827D000649486 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED7E3E76270827D000649486 /* GoogleService-Info.plist */; };
 		EDA88EC426FC581A00D76B46 /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA88EC326FC581A00D76B46 /* libswiftWebKit.tbd */; };
 		EDFBA9CE2707579E0039691C /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFBA9CD2707579E0039691C /* BootSplash.storyboard */; };
 /* End PBXBuildFile section */
@@ -74,6 +74,7 @@
 		D00AAFFCFCFDA5787532823F /* Pods-Travelux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travelux.release.xcconfig"; path = "Target Support Files/Pods-Travelux/Pods-Travelux.release.xcconfig"; sourceTree = "<group>"; };
 		D82181DDCED0427BAD980E48 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED5C1EFB270C80C800A0CDC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED7E3E332708015800649486 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../src/assets/Fonts; sourceTree = "<group>"; };
 		ED7E3E352708019F00649486 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-BlackItalic.ttf"; path = "../src/assets/Fonts/SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		ED7E3E362708019F00649486 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "../src/assets/Fonts/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		ED7E3E3E2708019F00649486 /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-LightItalic.ttf"; path = "../src/assets/Fonts/SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
 		ED7E3E3F2708019F00649486 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-SemiBold.ttf"; path = "../src/assets/Fonts/SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED7E3E40270801A000649486 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Light.ttf"; path = "../src/assets/Fonts/SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
-		ED7E3E76270827D000649486 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDA88EC326FC581A00D76B46 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		EDFBA9CD2707579E0039691C /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Travelux/BootSplash.storyboard; sourceTree = "<group>"; };
 		F1FBF85F27804219ADA0DB8B /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				ED7E3E76270827D000649486 /* GoogleService-Info.plist */,
+				ED5C1EFB270C80C800A0CDC4 /* GoogleService-Info.plist */,
 				ED7E3E372708019F00649486 /* SourceSansPro-Black.ttf */,
 				ED7E3E352708019F00649486 /* SourceSansPro-BlackItalic.ttf */,
 				ED7E3E362708019F00649486 /* SourceSansPro-Bold.ttf */,
@@ -340,7 +340,7 @@
 				ED7E3E532708024C00649486 /* SourceSansPro-Italic.ttf in Resources */,
 				ED7E3E542708024C00649486 /* SourceSansPro-Light.ttf in Resources */,
 				ED7E3E552708024C00649486 /* SourceSansPro-LightItalic.ttf in Resources */,
-				ED7E3E77270827D000649486 /* GoogleService-Info.plist in Resources */,
+				ED5C1EFC270C80C800A0CDC4 /* GoogleService-Info.plist in Resources */,
 				ED7E3E562708024C00649486 /* SourceSansPro-Regular.ttf in Resources */,
 				ED7E3E572708024C00649486 /* SourceSansPro-SemiBold.ttf in Resources */,
 				ED7E3E582708024C00649486 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,

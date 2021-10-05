@@ -1,0 +1,62 @@
+{
+    "places": [
+        {
+            "id": 1,
+            "name": "Gần đây",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/area.png"
+        },
+        {
+            "id": 2,
+            "name": "Hà Nội",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/hanoi.png"
+        },
+        {
+            "id": 3,
+            "name": "Hồ Chí Minh",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/hcm.png"
+        },
+        {
+            "id": 4,
+            "name": "Đà Lạt",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/dalat.png"
+        },
+        {
+            "id": 5,
+            "name": "Vũng Tàu",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/vungtau.png"
+        }
+    ],
+    "discount": {
+        "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/golden-hour.png",
+        "title": "Giờ vàng trên Travelux",
+        "name": "HO CHI MINH",
+        "description": "DISCOUNT UP TO 50%"
+    },
+    "promotion": {
+        "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/promotion.png",
+        "title": "Ưu đãi độc quyền",
+        "description": "Chỉ có tại Travelux, hấp dẫn và hữu hạn, book ngay!"
+    },
+    "houses": [
+        {
+            "id": 1,
+            "name": "Căn hộ",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/aparment.png"
+        },
+        {
+            "id": 2,
+            "name": "Nhà riêng",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/village.png"
+        },
+        {
+            "id": 3,
+            "name": "Biệt thự",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/villa.png"
+        },
+        {
+            "id": 4,
+            "name": "Studio",
+            "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/village.png"
+        }
+    ]
+}

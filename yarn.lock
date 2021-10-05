@@ -1509,24 +1509,19 @@
   resolved "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz"
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
-"@react-native-firebase/analytics@^12.8.0":
-  version "12.8.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-12.8.0.tgz#a4d7f6a9872945849af0a3f1bae601fa11925fad"
-  integrity sha512-aVl1pJmbs15XWpOGHiBCKbleSF4U16DgYWbbepiCW20ElKh65onhZYnlZXNMMs2v/t9lG1S3vmfpBaTR5aPZrg==
-
 "@react-native-firebase/app@^12.8.0":
-  version "12.8.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.8.0.tgz#d9716529add20ed70e8a712dba4ce153e469fa7e"
-  integrity sha512-Ya9/3VhLOjuf3oRCx9zvmHJtKXCNgGbaQzKR0hVs5n+D0qj30O6tXqxi/I69lnH6/ZX2jJ00n8W6azVwt/iWtw==
+  version "12.9.0"
+  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.9.0.tgz"
+  integrity sha512-0kJDgkZk+EWK9/XJb/T7NOs2bH9s3R/cSIX//dsYD9I9DtIyq7BPSKZOTgUQPzmDH0NGXjOOXbXvrCahpewzpg==
   dependencies:
     "@expo/config-plugins" "^3.1.0"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
 "@react-native-firebase/auth@^12.8.0":
-  version "12.8.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.8.0.tgz#e9e57e484116eb1d0c0234f69b63e8aaeb8d6ab8"
-  integrity sha512-jD4kv0aC7YhAi18ZVlP0R4y/qpLoTGLxWtPo32TXQc/O54/QWUhQ1/g/PKuqD+4rXiC20vpns8eA/dkk3suPuw==
+  version "12.9.0"
+  resolved "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-12.9.0.tgz"
+  integrity sha512-+2e9jHtpUq2aJoLPUzcRNGyEdBQeEgqim4dVWToMkFcctA+1NqQGnIBRhZIq44ZyBTb+tbyPktnIfm66QJNDyg==
 
 "@react-native-masked-view/masked-view@^0.2.6":
   version "0.2.6"
@@ -1846,9 +1841,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^17":
-  version "17.0.26"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.26.tgz#960ea4b3518cc154ed7df3b35656c508df653331"
-  integrity sha512-MXxuXrH2xOcv5cp/su4oz69dNQnSA90JjFw5HBd5wifw6Ihi94j7dRJm7qNsB30tnruXSCPc9qmlhGop4nh9Hw==
+  version "17.0.27"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.27.tgz#6498ed9b3ad117e818deb5525fa1946c09f2e0e6"
+  integrity sha512-zgiJwtsggVGtr53MndV7jfiUESTqrbxOcBvwfe6KS/9bzaVPCTDieTWnFNecVNx6EAaapg5xsLLWFfHHR437AA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"

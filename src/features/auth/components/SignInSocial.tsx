@@ -16,12 +16,17 @@ export default function SignInSocial() {
       <Pressable
         onPress={handleSignInFacebook}
         style={[styles.btnSocial, styles.btnFacebook]}>
-        <Icon name="facebook" color={Colors.blue700} size={28} />
+        <Icon name="facebook" color={Colors.blue700} size={24} />
       </Pressable>
       <Pressable
         onPress={handleSignInGoogle}
         style={[styles.btnSocial, styles.btnGoogle]}>
-        <Icon name="google" color={Colors.red600} size={28} />
+        <Icon name="google" color={Colors.red600} size={24} />
+      </Pressable>
+      <Pressable
+        onPress={handleSignInGoogle}
+        style={[styles.btnSocial, styles.btnTwitter]}>
+        <Icon name="twitter" color={Colors.blue600} size={24} />
       </Pressable>
     </View>
   );

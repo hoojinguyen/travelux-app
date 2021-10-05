@@ -104,24 +104,23 @@ const SocialStyle = StyleSheet.create({
     marginTop: 20,
   },
   btnSocial: {
-    width: 100,
-    height: 50,
-    padding: 10,
+    width: 80,
+    height: 40,
     marginLeft: 10,
     marginRight: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: Colors.grey500,
-    borderRadius: 10,
+    borderRadius: 5,
     borderWidth: 1,
-    shadowOpacity: 0.3,
-    shadowOffset: { width: 0, height: 1 },
   },
   btnFacebook: {
-    shadowColor: Colors.blue800,
+    borderColor: Colors.blue800,
   },
   btnGoogle: {
-    shadowColor: Colors.red800,
+    borderColor: Colors.red800,
+  },
+  btnTwitter: {
+    borderColor: Colors.blue600,
   },
 });
 

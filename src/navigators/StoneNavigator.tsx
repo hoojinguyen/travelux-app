@@ -1,27 +1,25 @@
-import * as React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import { IntroduceScreen } from '../features/introduce';
+import * as React from 'react';
+import { Colors } from 'react-native-paper';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { AccountScreen } from '../features/account';
 import {
+  ForgetPasswordScreen,
   SignInScreen,
   SignUpScreen,
-  ForgetPasswordScreen,
 } from '../features/auth';
-import { HomeScreen } from '../features/home';
-import { SearchScreen } from '../features/search';
-import { FavoritesScreen } from '../features/favorites';
-
 import {
   Drawer1Screen,
   Drawer2Screen,
   Drawer3Screen,
 } from '../features/drawer';
-
-import { navigationTheme } from '../theme';
+import { FavoriteScreen } from '../features/favorite';
+import { HomeScreen } from '../features/home';
+import { IntroduceScreen } from '../features/introduce';
+import { MessageScreen } from '../features/message';
+import { ReservationScreen } from '../features/reservation';
 
 const IntroStack = createNativeStackNavigator();
 export const IntroStackScreen = () => (
@@ -56,65 +54,70 @@ export const AuthStackScreen = () => (
   </AuthStack.Navigator>
 );
 
-const HomeStack = createNativeStackNavigator();
-export const HomeStackScreen = () => (
-  <HomeStack.Navigator
-    screenOptions={{
-      headerShown: false,
-    }}>
-    <HomeStack.Screen name="Home" component={HomeScreen} />
-  </HomeStack.Navigator>
-);
-
 const Tab = createMaterialBottomTabNavigator();
 export const TabScreen = () => {
-  const { colors, bottomTabStyles } = navigationTheme;
   const tabs = [
     {
       name: 'Home',
       component: HomeScreen,
       label: 'Home',
-      icon: 'home-outline',
+      activeIcon: 'home',
+      inactiveIcon: 'home-outline',
     },
     {
-      name: 'Search',
-      component: SearchScreen,
-      label: 'Search',
-      icon: 'search-outline',
+      name: 'Favorite',
+      component: FavoriteScreen,
+      label: 'Favorite',
+      activeIcon: 'heart',
+      inactiveIcon: 'heart-outline',
     },
     {
-      name: 'Favorites',
-      component: FavoritesScreen,
-      label: 'Your Library',
-      icon: 'library-outline',
+      name: 'Reservation',
+      component: ReservationScreen,
+      label: 'Reservation',
+      activeIcon: 'book',
+      inactiveIcon: 'book-outline',
+    },
+    {
+      name: 'Message',
+      component: MessageScreen,
+      label: 'Message',
+      activeIcon: 'chatbox',
+      inactiveIcon: 'chatbox-outline',
+    },
+    {
+      name: 'Account',
+      component: AccountScreen,
+      label: 'Account',
+      icon: 'person-outline',
+      activeIcon: 'person',
+      inactiveIcon: 'person-outline',
     },
   ];
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor={colors.activeColor}
-      inactiveColor={colors.inactiveColor}
       barStyle={{
-        backgroundColor: colors.background,
-        opacity: bottomTabStyles.opacity,
-        position: 'absolute',
-        left: 0,
-        bottom: 0,
-        right: 0,
+        backgroundColor: Colors.lightGreen900,
       }}>
-      {tabs.map(({ name, component, label, icon }, index) => (
-        <Tab.Screen
-          key={index}
-          name={name}
-          component={component}
-          options={{
-            tabBarLabel: label,
-            tabBarIcon: ({ color }) => (
-              <Ionicons name={icon} color={color} size={24} />
-            ),
-          }}
-        />
-      ))}
+      {tabs.map(
+        ({ name, component, label, activeIcon, inactiveIcon }, index) => (
+          <Tab.Screen
+            key={index}
+            name={name}
+            component={component}
+            options={{
+              tabBarLabel: label,
+              tabBarIcon: ({ color, focused }) =>
+                focused ? (
+                  <Ionicons name={activeIcon} color={color} size={24} />
+                ) : (
+                  <Ionicons name={inactiveIcon} color={color} size={24} />
+                ),
+            }}
+          />
+        ),
+      )}
     </Tab.Navigator>
   );
 };
