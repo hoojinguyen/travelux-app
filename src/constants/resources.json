@@ -58,5 +58,124 @@
             "name": "Studio",
             "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/village.png"
         }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "title": "Deal mới mỗi ngày",
+            "description": "Khám phá ngay chỗ ở mới giảm đến 20%. Nhập mã OCTOBER để nhận thêm giảm giá lên tới 1 triệu đồng!",
+            "listRoom": [
+                {
+                    "id": 1,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house1.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Villa Garden View",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "5,800,000 đ"
+                },
+                {
+                    "id": 2,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house2.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Dalat CASA",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "3,800,000 đ"
+                },
+                {
+                    "id": 3,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house3.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Windbell Villa / Garden view room 3 (dbl/twn)",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "1,200,000 đ"
+                },
+                {
+                    "id": 4,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house4.png",
+                    "type": "CĂN HỘ CHUNG CƯ",
+                    "name": "Yesterday Once More, 2Brs Aptw/ Free Gym",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "1,800,000 đ"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Đi Sài Gòn chọn ngay homestay đúng chất",
+            "description": "Săn ngay homestay Sài Gòn GIÁ TỐT NHẤT NĂM giảm tới 15%. Nhập ngay mã OCTOBER",
+            "listRoom": [
+                {
+                    "id": 1,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house1.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Villa Garden View",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "5,800,000 đ"
+                },
+                {
+                    "id": 2,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house2.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Dalat CASA",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "3,800,000 đ"
+                },
+                {
+                    "id": 3,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house3.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Windbell Villa / Garden view room 3 (dbl/twn)",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "1,200,000 đ"
+                },
+                {
+                    "id": 4,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house4.png",
+                    "type": "CĂN HỘ CHUNG CƯ",
+                    "name": "Yesterday Once More, 2Brs Aptw/ Free Gym",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "1,800,000 đ"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Top chỗ ở Hot 1000 độ",
+            "description": "Khám phá ngay chỗ ở nổi tiếng đã xuất hiện trong các bộ phim & MV",
+            "listRoom": [
+                {
+                    "id": 1,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house1.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Villa Garden View",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "5,800,000 đ"
+                },
+                {
+                    "id": 2,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house2.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Dalat CASA",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "3,800,000 đ"
+                },
+                {
+                    "id": 3,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house3.png",
+                    "type": "BIỆT THỰ",
+                    "name": "Windbell Villa / Garden view room 3 (dbl/twn)",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "1,200,000 đ"
+                },
+                {
+                    "id": 4,
+                    "image": "/Users/yantee/Projects/new-projects/react-native/Travelux/src/assets/Images/homepage/house4.png",
+                    "type": "CĂN HỘ CHUNG CƯ",
+                    "name": "Yesterday Once More, 2Brs Aptw/ Free Gym",
+                    "extraInfo": "2 khách, 1 phòng ngủ, 1 phòng tắm",
+                    "price": "1,800,000 đ"
+                }
+            ]
+        }
     ]
 }

@@ -1,15 +1,22 @@
 import React from 'react';
 import { Alert, Image, Pressable, Text, View } from 'react-native';
-import Resources from '../../../constants/resources.json';
 import { PlaceStyle as styles } from '../styles';
 
-export default function ListPlace() {
+interface ListPlaceProps {
+  data: {
+    id: string | number;
+    name: string;
+    image: string;
+  }[];
+}
+
+export default function ListPlace({ data }: ListPlaceProps) {
   const redirectToPlace = (item: any) => {
     Alert.alert('Click to', item.name);
   };
   return (
     <View style={styles.wrapper}>
-      {Resources.places.map(item => (
+      {data.map((item: any) => (
         <Pressable
           key={item.id}
           style={styles.item}

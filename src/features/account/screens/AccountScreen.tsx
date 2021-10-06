@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import FocusAwareStatusBar from '../../../components/FocusAwareStatusBar';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { signOut } from '../../../redux/slices/authSlice';
-import { HomeStyle as styles } from '../styles';
+import { AccountStyle as styles } from '../styles';
 
 export function AccountScreen() {
   const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ export function AccountScreen() {
     <SafeAreaView style={styles.container}>
       <FocusAwareStatusBar barStyle="dark-content" />
       <View>
-        <Text>Homepage</Text>
+        <Text>Account Screen</Text>
       </View>
       <View>
         <Button title="Logout" onPress={() => dispatch(signOut())} />

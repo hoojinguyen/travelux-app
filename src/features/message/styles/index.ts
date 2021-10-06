@@ -1,7 +1,7 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors } from 'react-native-paper';
 
-const HomeStyle = StyleSheet.create({
+const MessageStyle = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -9,4 +9,4 @@ const HomeStyle = StyleSheet.create({
   },
 });
 
-export { HomeStyle };
+export { MessageStyle };

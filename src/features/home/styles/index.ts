@@ -1,11 +1,25 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors } from 'react-native-paper';
+import Dimensions from '../../../constants/dimens';
+
+const WIDTH_SCREEN = Dimensions.common.WINDOW_WIDTH;
+const HEIGHT_SCREEN = Dimensions.common.WINDOW_HEIGHT;
+
+const MARGIN_TOP_BETWEEN_ELEMENT_SCROLL = 30;
 
 const HomeStyle = StyleSheet.create({
   container: {
-    flex: 1,
     paddingLeft: 20,
     paddingRight: 20,
+  },
+  fixed: {
+    marginBottom: 20,
+  },
+  scroll: {
+    marginTop: 10,
+  },
+  content: {
+    paddingBottom: HEIGHT_SCREEN / 5,
   },
 });
 
@@ -31,7 +45,7 @@ const HeaderStyle = StyleSheet.create({
 const SearchStyle = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: 10,
     padding: 5,
     borderWidth: 1,
     borderColor: Colors.grey400,
@@ -55,7 +69,6 @@ const PlaceStyle = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 30,
   },
   item: {},
   image: {
@@ -76,7 +89,7 @@ const PlaceStyle = StyleSheet.create({
 
 const DiscountStyle = StyleSheet.create({
   wrapper: {
-    marginTop: 30,
+    marginTop: MARGIN_TOP_BETWEEN_ELEMENT_SCROLL,
   },
   title: {
     fontSize: 22,
@@ -117,7 +130,7 @@ const DiscountStyle = StyleSheet.create({
 });
 const PromotionStyle = StyleSheet.create({
   wrapper: {
-    marginTop: 30,
+    marginTop: MARGIN_TOP_BETWEEN_ELEMENT_SCROLL,
   },
   title: {
     fontSize: 22,
@@ -139,7 +152,7 @@ const HouseStyle = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 30,
+    marginTop: MARGIN_TOP_BETWEEN_ELEMENT_SCROLL,
   },
   item: {},
   image: {
@@ -155,6 +168,85 @@ const HouseStyle = StyleSheet.create({
   },
 });
 
+const ListRoomStyle = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    marginTop: MARGIN_TOP_BETWEEN_ELEMENT_SCROLL,
+  },
+  title: {
+    fontSize: 22,
+    fontFamily: 'SourceSansPro-Regular',
+  },
+  description: {
+    paddingTop: 10,
+    fontSize: 16,
+    fontFamily: 'SourceSansPro-ExtraLight',
+  },
+  roomWrapper: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginTop: 15,
+  },
+  room: {
+    width: WIDTH_SCREEN / 2.4,
+    marginBottom: 20,
+  },
+  imageRoom: {
+    width: '100%',
+    height: 100,
+  },
+  typeRoom: {
+    paddingTop: 5,
+    fontSize: 12,
+    fontFamily: 'SourceSansPro-SemiBold',
+    color: Colors.grey700,
+  },
+  nameRoom: {
+    paddingTop: 5,
+    fontSize: 12,
+    fontFamily: 'SourceSansPro-Bold',
+  },
+  infoRoom: {
+    paddingTop: 5,
+    fontSize: 12,
+    fontFamily: 'SourceSansPro-ExtraLight',
+  },
+  priceRoom: {
+    paddingTop: 5,
+    fontSize: 12,
+    fontFamily: 'SourceSansPro-Bold',
+  },
+  action: {
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonViewAll: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 60,
+    paddingRight: 60,
+    borderWidth: 1,
+    borderColor: Colors.lightGreen500,
+    borderRadius: 20,
+
+    shadowColor: Colors.lightGreen500,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+
+    elevation: 6,
+  },
+  textViewAll: {
+    textAlign: 'center',
+    fontSize: 14,
+    fontFamily: 'SourceSansPro-SemiBold',
+  },
+});
+
 export {
   HomeStyle,
   HeaderStyle,
@@ -163,4 +255,5 @@ export {
   DiscountStyle,
   PromotionStyle,
   HouseStyle,
+  ListRoomStyle,
 };

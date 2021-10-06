@@ -1,12 +1,18 @@
 import React from 'react';
-import { Alert, Image, Pressable, Text, View } from 'react-native';
-import Resources from '../../../constants/resources.json';
+import { Image, Pressable, Text, View } from 'react-native';
 import { HouseStyle as styles } from '../styles';
+interface CatalogProps {
+  data: {
+    id: string | number;
+    image: string;
+    name: string;
+  }[];
+}
 
-export default function House() {
+export default function Catalog({ data }: CatalogProps) {
   return (
     <View style={styles.wrapper}>
-      {Resources.houses.map(item => (
+      {data.map(item => (
         <Pressable key={item.id} style={styles.item}>
           <Image
             source={{ uri: item.image }}

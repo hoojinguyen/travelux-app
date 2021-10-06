@@ -1,22 +1,27 @@
 import React from 'react';
-import { Alert, Image, Pressable, Text, View } from 'react-native';
-import Resources from '../../../constants/resources.json';
+import { Image, Pressable, Text, View } from 'react-native';
 import { DiscountStyle as styles } from '../styles';
+interface DiscountProps {
+  data: {
+    name: string;
+    title: string;
+    image: string;
+    description: string;
+  };
+}
 
-export default function Discount() {
+export default function Discount({ data }: DiscountProps) {
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.title}>{Resources.discount.title}</Text>
+      <Text style={styles.title}>{data.title}</Text>
       <Pressable style={styles.card}>
         <Image
-          source={{ uri: Resources.discount.image }}
+          source={{ uri: data.image }}
           resizeMode="center"
           style={styles.cardImage}
         />
-        <Text style={styles.cardName}>{Resources.discount.name}</Text>
-        <Text style={styles.cardDescription}>
-          {Resources.discount.description}
-        </Text>
+        <Text style={styles.cardName}>{data.name}</Text>
+        <Text style={styles.cardDescription}>{data.description}</Text>
       </Pressable>
     </View>
   );
