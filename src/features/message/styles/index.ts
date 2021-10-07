@@ -7,6 +7,13 @@ const MessageStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  button: {
+    marginTop: 20,
+    padding: 20,
+    borderColor: Colors.green700,
+    borderWidth: 1,
+    borderRadius: 20,
+  },
 });
 
 export { MessageStyle };
