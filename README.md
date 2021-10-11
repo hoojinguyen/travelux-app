@@ -12,11 +12,21 @@ Here is a small demo on how to structure folders in react native and the basic l
 
 ## Screenshots
 
+<span>
 <img src="./screenshots/signin.png" width="200">
+</span>
+<span>
 <img src="./screenshots/signup.png" width="200">
+</span>
+<span>
 <img src="./screenshots/home1.png" width="200">
+</span>
+<span>
 <img src="./screenshots/home2.png" width="200">
+</span>
+<span>
 <img src="./screenshots/account.png" width="200">
+</span>
 
 ## Tech stack
 
