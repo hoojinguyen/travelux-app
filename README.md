@@ -1,5 +1,3 @@
-# react-native-with-ts
-
 <p align="center">
 <img  align="center" src="./screenshots/logo.png" width="200">
 </p>
