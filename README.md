@@ -5,7 +5,7 @@
 Travelux
 </h3>
 <p align="center">
-Here is a small demo on how to structure folders in react native and the basic look and feel for a booking app. This is also a project where I can learn and practice on how to build a mobile app.
+This is a small demo on how to structure folders in react native and the basic look and feel for a booking app. This is also a project where I can learn and practice on how to build a mobile app.
 </p>
 
 ## Screenshots
